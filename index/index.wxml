@@ -1,0 +1,33 @@
+<view class="root">
+  <swiper bindchange="changeSwiper" current="{{current}}" circular="{{circular}}" vertical>
+    <block wx:for="{{videoList}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+      <swiper-item>
+        <video id="{{'myVideo_' + index}}" src="{{item.url}}" object-fit="contain" loop='{{true}}' custom-cache="{{true}}" autoplay='{{false}}'
+        controls='{{false}}' show-progress="{{true}}" show-fullscreen-btn="{{false}}" show-play-btn="{{false}}" 
+        show-center-play-btn="{{fasle}}" enable-progress-gesture="{{false}}" data-index="{{index}}" catchtap="playOrPause"></video>
+        <view class="action">
+          <view class="wrap">
+            <image class="action-btn not-like" src="/image/like.png" mode="widthFix"></image>
+            <text>688</text>
+          </view>
+          <view class="wrap">
+            <image class="action-btn not-like" src="/image/share.png" mode="widthFix"></image>
+            <text>288</text>
+          </view>
+        </view>
+        <view class="info">
+          <view class="header">
+            <image class="avatar" src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=348555030,881225398&fm=26&gp=0.jpg"></image>
+            <view class="name">{{item.data.staff}}</view>
+          </view>
+          <view class="content">
+            3年从业经验，妥善照顾好每一位新生儿妈妈，给您一个非常愉快的月子期，远离烦恼，让您恢复完美S型身材，给您最贴心的服务，让您的心情美美哒
+          </view>
+          <view style="margin-bottom: {{systemInfo.safeArea.bottom - systemInfo.safeArea.height}}px">
+            <view class="checkBtn">了解或预约</view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
